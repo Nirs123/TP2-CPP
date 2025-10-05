@@ -7,6 +7,7 @@
 *************************************************************************/
 
 #include "TrajetFabrique.h"
+#include <cstddef>
 
 // Constructeur
 TrajetFabrique::TrajetFabrique() {
@@ -21,11 +22,11 @@ TrajetFabrique::~TrajetFabrique() {
 // Méthode pour créer un trajet simple
 TrajetSimple* TrajetFabrique::CreerTrajetSimple(const char* villeDepart, const char* villeArrivee) {
     // Implémentation de la méthode
-    return nullptr; // Valeur de retour factice
+    return NULL; // Valeur de retour factice
 }
 
 // Méthode pour créer un trajet composé
 TrajetCompose* TrajetFabrique::CreerTrajetCompose() {
     // Implémentation de la méthode
-    return nullptr; // Valeur de retour factice
+    return NULL; // Valeur de retour factice
 }

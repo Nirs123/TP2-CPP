@@ -36,13 +36,13 @@ TrajetSimple::~TrajetSimple()
 char* TrajetSimple::GetVilleDepart() const
 {
     // Implémentation à venir
-    return nullptr;
+    return NULL;
 }
 
 char* TrajetSimple::GetVilleArrivee() const
 {
     // Implémentation à venir
-    return nullptr;
+    return NULL;
 }
 
 void TrajetSimple::Afficher() const

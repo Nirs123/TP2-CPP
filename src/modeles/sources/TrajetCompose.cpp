@@ -36,13 +36,13 @@ TrajetCompose::~TrajetCompose()
 char* TrajetCompose::GetVilleDepart() const
 {
     // Implémentation à venir
-    return nullptr;
+    return NULL;
 }
 
 char* TrajetCompose::GetVilleArrivee() const
 {
     // Implémentation à venir
-    return nullptr;
+    return NULL;
 }
 
 void TrajetCompose::Afficher() const
