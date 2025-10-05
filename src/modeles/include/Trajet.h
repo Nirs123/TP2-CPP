@@ -26,10 +26,10 @@ public:
 
     //----------------------------------------------------- Méthodes publiques
 
-    virtual char* getVilleDepart() const = 0;
+    virtual char* GetVilleDepart() const = 0;
     // Retourne la ville de départ
 
-    virtual char* getVilleArrivee() const = 0;
+    virtual char* GetVilleArrivee() const = 0;
     // Retourne la ville d'arrivée
 
     virtual void Afficher() const = 0;

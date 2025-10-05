@@ -33,10 +33,10 @@ public:
 
     //----------------------------------------------------- Méthodes publiques
 
-    char* getVilleDepart() const override;
+    char* GetVilleDepart() const override;
     // Retourne la ville de départ du trajet composé
 
-    char* getVilleArrivee() const override;
+    char* GetVilleArrivee() const override;
     // Retourne la ville d'arrivée du trajet composé
 
     void Afficher() const override;

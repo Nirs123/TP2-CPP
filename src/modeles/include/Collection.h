@@ -25,13 +25,13 @@ class Collection
 public:
     //----------------------------------------------------- Méthodes publiques
 
-    void ajouter(Trajet* trajet);
+    void Ajouter(Trajet* trajet);
     // Ajoute un trajet à la collection
 
-    void supprimer(int index);
+    void Supprimer(int index);
     // Supprime un trajet de la collection à l'index spécifié
 
-    Trajet** rechercher(char* villeDepart, char* villeArrivee, int * nbTrajetsTrouves) const;
+    Trajet** Rechercher(char* villeDepart, char* villeArrivee, int * nbTrajetsTrouves) const;
     // Recherche un trajet entre deux villes
 
     //-------------------------------------------- Constructeurs - destructeur

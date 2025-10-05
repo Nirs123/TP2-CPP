@@ -33,13 +33,13 @@ TrajetSimple::~TrajetSimple()
 
 //----------------------------------------------------- Méthodes publiques
 
-char* TrajetSimple::getVilleDepart() const
+char* TrajetSimple::GetVilleDepart() const
 {
     // Implémentation à venir
     return nullptr;
 }
 
-char* TrajetSimple::getVilleArrivee() const
+char* TrajetSimple::GetVilleArrivee() const
 {
     // Implémentation à venir
     return nullptr;

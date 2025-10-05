@@ -20,19 +20,19 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Collection::ajouter(Trajet* trajet)
+void Collection::Ajouter(Trajet* trajet)
 {
     // Implémentation à venir
     return;
 }
 
-void Collection::supprimer(int index)
+void Collection::Supprimer(int index)
 {
     // Implémentation à venir
     return;
 }
 
-Trajet** Collection::rechercher(char* villeDepart, char* villeArrivee, int * nbTrajetsTrouves) const
+Trajet** Collection::Rechercher(char* villeDepart, char* villeArrivee, int * nbTrajetsTrouves) const
 {
     // Implémentation à venir
     return NULL;

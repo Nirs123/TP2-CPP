@@ -33,10 +33,10 @@ public:
 
     //----------------------------------------------------- Méthodes publiques
 
-    char* getVilleDepart() const override;
+    char* GetVilleDepart() const override;
     // Retourne la ville de départ
 
-    char* getVilleArrivee() const override;
+    char* GetVilleArrivee() const override;
     // Retourne la ville d'arrivée
 
     void Afficher() const override;

@@ -33,13 +33,13 @@ TrajetCompose::~TrajetCompose()
 
 //----------------------------------------------------- Méthodes publiques
 
-char* TrajetCompose::getVilleDepart() const
+char* TrajetCompose::GetVilleDepart() const
 {
     // Implémentation à venir
     return nullptr;
 }
 
-char* TrajetCompose::getVilleArrivee() const
+char* TrajetCompose::GetVilleArrivee() const
 {
     // Implémentation à venir
     return nullptr;
