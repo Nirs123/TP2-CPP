@@ -23,16 +23,25 @@ using namespace std;
 
 void Collection::Ajouter(Trajet *trajet) {
 
-  if (index >= tailleMax) {
+  if (tailleCourante >= tailleMax) {
     doublerTailleTrajets();
   }
 
-  trajets[index++] = trajet;
+  trajets[tailleCourante++] = trajet;
   return;
 }
 
 void Collection::Supprimer(int index) {
-  // Implémentation à venir
+
+  if (index < 0 || index >= this->tailleCourante) {
+    cerr << "Index invalide pour la suppression." << endl;
+    return;
+  }
+  delete trajets[index];
+  for (int i = index; i < this->tailleCourante - 1; i++) {
+    trajets[i] = trajets[i + 1];
+  }
+  this->tailleCourante--;
   return;
 }
 
@@ -44,7 +53,7 @@ Trajet **Collection::Rechercher(char *villeDepart, char *villeArrivee,
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Collection::Collection(int tailleMax) : tailleMax(tailleMax), index(0) {
+Collection::Collection(int tailleMax) : tailleMax(tailleMax), tailleCourante(0) {
 
 #ifdef MAP
   cout << "[MAP] -> Constructeur de : Collection" << endl;
@@ -58,7 +67,7 @@ Collection::~Collection() {
   cout << "[MAP] -> Destructeur de : Collection" << endl;
 #endif
 
-  for (int i = 0; i < index; i++) {
+  for (int i = 0; i < tailleCourante; i++) {
     delete trajets[i];
   }
 

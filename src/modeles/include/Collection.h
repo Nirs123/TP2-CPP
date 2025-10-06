@@ -49,8 +49,8 @@ protected:
     //----------------------------------------------------- Attributs protégés
     Trajet** trajets;  // Tableau de pointeurs vers les trajets
     int tailleMax;     // Taille maximale de la collection
-    int index;         // Index actuel
-
+    int tailleCourante;         // taille courante
+    
     void doublerTailleTrajets();
 };
 

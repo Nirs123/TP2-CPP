@@ -1,0 +1,4 @@
+#ifndef TEST_CATALOGUE_H
+#define TEST_CATALOGUE_H
+
+#endif // TEST_CATALOGUE_H

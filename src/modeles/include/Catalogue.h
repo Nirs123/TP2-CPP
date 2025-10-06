@@ -29,7 +29,7 @@ public:
     // Ajoute un trajet au catalogue
 
     void SupprimerTrajet(unsigned int indexSuppression);
-    // Supprime un trajet du catalogue à l'index spécifié
+    // Supprime un trajet du catalogue à l'tailleCourante spécifié
 
     void RechercherParcours(char* villeDepart, char* villeArrivee) const;
     // Recherche un parcours entre deux villes

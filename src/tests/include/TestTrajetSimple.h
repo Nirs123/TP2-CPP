@@ -1,0 +1,4 @@
+#ifndef TEST_TRAJET_SIMPLE_H
+#define TEST_TRAJET_SIMPLE_H
+
+#endif // TEST_TRAJET_SIMPLE_H
