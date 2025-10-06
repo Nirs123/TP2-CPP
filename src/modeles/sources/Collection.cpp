@@ -61,7 +61,7 @@ void Collection::Supprimer(int index) {
 Trajet *Collection::Recuperer(int index) const {
   if (index < 0 || index >= this->tailleCourante) {
     cerr << "Index invalide pour la récupération." << endl;
-    return nullptr;
+    return NULL;
   }
   return trajets[index];
 }
