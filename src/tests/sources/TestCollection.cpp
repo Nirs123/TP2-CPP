@@ -21,16 +21,26 @@ void testCollectionInstanciation() {
     cout << "\tSuccès de la destruction de la Collection." << endl;
 }
 
-void testCollectionAjoutTrajetSimple() {
+void testCollectionAjoutDeTrajetsSimples() {
     cout << "[TEST] Ajout d'un trajet simple à une Collection." << endl;
-
     Collection* c = new Collection(5);
-    TrajetSimple* ts = new TrajetSimple("Paris", "Lyon", Bateau);
-    c->Ajouter(ts);
-    delete c; // La collection doit gérer la destruction des trajets qu'elle contient
+    TrajetSimple* ts1 = new TrajetSimple("Milhau", "Clermont d'Auvernha", Bateau);
+    TrajetSimple* ts2 = new TrajetSimple("Marselha", "Paris", Train);
+    TrajetSimple* ts3 = new TrajetSimple("Rodès", "Villafranca de rouergue", Voiture);
+    TrajetSimple* ts4 = new TrajetSimple("Toulouse", "Bordeaux", Avion);
+    TrajetSimple* ts5 = new TrajetSimple("Lyon", "Nice", Bateau);
+    TrajetSimple* ts6 = new TrajetSimple("Nimes", "Montpellier", Train);
+    c->Ajouter(ts1);
+    c->Ajouter(ts2);
+    c->Ajouter(ts3);
+    c->Ajouter(ts4);
+    c->Ajouter(ts5);
+    c->Ajouter(ts6);
+    c->Afficher();
+    delete c; 
 }
 
 void lancementTestsCollection() {
     testCollectionInstanciation();
-    testCollectionAjoutTrajetSimple();
+    testCollectionAjoutDeTrajetsSimples();
 }

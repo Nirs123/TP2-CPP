@@ -21,6 +21,15 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+void Collection::Afficher() const {
+    for (int i = 0; i < tailleCourante; i++) {
+        trajets[i]->Afficher();
+        if (i < tailleCourante - 1) {
+            cout << " - ";
+        }
+    }
+}
+
 void Collection::Ajouter(Trajet *trajet) {
 
   if (tailleCourante >= tailleMax) {
@@ -46,14 +55,14 @@ void Collection::Supprimer(int index) {
 }
 
 Trajet **Collection::Rechercher(char *villeDepart, char *villeArrivee,
-                                int *nbTrajetsTrouves) const {
+                                unsigned int *nbTrajetsTrouves) const {
   // Implémentation à venir
   return NULL;
 }
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Collection::Collection(int tailleMax) : tailleMax(tailleMax), tailleCourante(0) {
+Collection::Collection(unsigned int tailleMax) : tailleMax(tailleMax), tailleCourante(0) {
 
 #ifdef MAP
   cout << "[MAP] -> Constructeur de : Collection" << endl;

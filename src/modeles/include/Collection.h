@@ -27,18 +27,20 @@ class Collection
 public:
     //----------------------------------------------------- Méthodes publiques
 
+    void Afficher() const;
+
     void Ajouter(Trajet* trajet);
     // Ajoute un trajet à la collection
 
     void Supprimer(int index);
     // Supprime un trajet de la collection à l'index spécifié
 
-    Trajet** Rechercher(char* villeDepart, char* villeArrivee, int * nbTrajetsTrouves) const;
+    Trajet** Rechercher(char* villeDepart, char* villeArrivee, unsigned int * nbTrajetsTrouves) const;
     // Recherche un trajet entre deux villes
 
     //-------------------------------------------- Constructeurs - destructeur
 
-    Collection(int tailleMax);
+    Collection(unsigned int tailleMax);
     // Constructeur avec taille maximale de la collection
 
     ~Collection();
