@@ -26,6 +26,9 @@ TrajetSimple::TrajetSimple(const char* villeDepart, const char* villeArrivee, Mo
         cout << "[MAP] -> Constructeur de : TrajetSimple" << endl;
     #endif
 
+    if (villeDepart == NULL) villeDepart = (char*)"Non défini";
+    if (villeArrivee == NULL) villeArrivee = (char*)"Non défini";
+
     this->villeDepart = new char[strlen(villeDepart) + 1];
     strcpy(this->villeDepart, villeDepart);
 
@@ -59,5 +62,5 @@ char* TrajetSimple::GetVilleArrivee() const
 
 void TrajetSimple::Afficher() const
 {
-    cout << "de " << this->villeDepart << " à " << this->villeArrivee << " en " << TransportToString(this->moyenTransport) << endl;
+    cout << "de " << this->villeDepart << " à " << this->villeArrivee << " en " << TransportToString(this->moyenTransport);
 }

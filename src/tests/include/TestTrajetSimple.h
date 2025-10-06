@@ -4,5 +4,6 @@
 void lancementTestsTrajetSimple();
 void testTrajetSimpleInstanciation();
 void testTrajetSimpleAffichage();
+void testTrajetSimpleInstanciationNull();
 
 #endif // TEST_TRAJET_SIMPLE_H
