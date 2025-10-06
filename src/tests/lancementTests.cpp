@@ -2,7 +2,6 @@
 
 #include "TestCatalogue.cpp"
 #include "TestCollection.cpp"
-#include "TestTrajet.cpp"
 #include "TestTrajetCompose.cpp"
 #include "TestTrajetSimple.cpp"
 
@@ -14,9 +13,6 @@ int main() {
 
     // Tests pour Collection
     std::cout << "\n=== Tests pour Collection ===" << std::endl;
-
-    // Tests pour Trajet
-    std::cout << "\n=== Tests pour Trajet ===" << std::endl;
 
     // Tests pour TrajetCompose
     std::cout << "\n=== Tests pour TrajetCompose ===" << std::endl;
