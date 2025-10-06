@@ -6,12 +6,13 @@
 CXX = g++
 
 # CXXFLAGS : options de compilation passées au compilateur
-# -std=c++98  : utilise le standard C++98
+# -std=c++11  : utilise le standard C++11
 # -Wall       : active tous les warnings standards
 # -Wextra     : active des warnings supplémentaires
 # -pedantic   : respecte strictement le standard (rejette les extensions)
 # -Werror     : (commenté) transformerait les warnings en erreurs
-CXXFLAGS = -std=c++98 -Wall -Wextra -pedantic # -Werror
+# -ansi       : conforme à la norme ANSI C++
+CXXFLAGS = -std=c++11 -Wall -Wextra -pedantic -ansi # -Werror
 
 # LDFLAGS : options de linkage (vide ici, mais pourrait contenir -lpthread, -lm, etc.)
 LDFLAGS =
