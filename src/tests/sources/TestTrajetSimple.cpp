@@ -9,7 +9,6 @@ void testTrajetSimpleInstanciation(){
 
     char dep[] = "Lyon";
     char arr[] = "Paris";
-
     TrajetSimple* ts = new TrajetSimple(dep, arr, Train);
 
     if (ts->GetVilleDepart() != NULL && ts->GetVilleArrivee() != NULL) {
@@ -23,6 +22,23 @@ void testTrajetSimpleInstanciation(){
     cout << "\tSuccès de la destruction de TrajetSimple." << endl;
 }
 
+void testTrajetSimpleAffichage(){
+    cout << "[TEST] Affichage de TrajetSimple." << endl;
+
+    char dep[] = "Lyon";
+    char arr[] = "Paris";
+    TrajetSimple* ts = new TrajetSimple(dep, arr, Train);
+
+    cout << "\tAffichage attendu : de Lyon à Paris en Train" << endl;
+    cout << "\tAffichage obtenu  : ";
+    ts->Afficher();
+
+    delete ts;
+
+    cout << "\tSuccès de la destruction de TrajetSimple." << endl;
+}
+
 void lancementTestsTrajetSimple(){
     testTrajetSimpleInstanciation();
+    testTrajetSimpleAffichage();
 }
