@@ -35,15 +35,15 @@ public:
     void Supprimer(int index);
     // Supprime un trajet de la collection à l'index spécifié
 
-    Trajet** Rechercher(char* villeDepart, char* villeArrivee, unsigned int * nbTrajetsTrouves) const;
+    Trajet** Rechercher(const char* villeDepart, const char* villeArrivee, unsigned int * nbTrajetsTrouves) const;
     // Recherche un trajet entre deux villes
 
-    Trajet * Recuperer(int index) const;
+    Trajet * Recuperer(const unsigned int index) const;
     // Récupère un trajet de la collection à l'index spécifié
 
     unsigned int GetTailleCourante() const;
     // Retourne la taille courante de la collection
-    
+
     //-------------------------------------------- Constructeurs - destructeur
 
     Collection(unsigned int tailleMax);

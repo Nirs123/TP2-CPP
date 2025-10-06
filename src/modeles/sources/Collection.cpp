@@ -58,7 +58,7 @@ void Collection::Supprimer(int index) {
   return;
 }
 
-Trajet *Collection::Recuperer(int index) const {
+Trajet *Collection::Recuperer(const unsigned int index) const {
   if (index < 0 || index >= this->tailleCourante) {
     cerr << "Index invalide pour la récupération." << endl;
     return NULL;
@@ -70,7 +70,7 @@ unsigned int Collection::GetTailleCourante() const {
   return this->tailleCourante;
 }
 
-Trajet **Collection::Rechercher(char *villeDepart, char *villeArrivee,
+Trajet **Collection::Rechercher(const char *villeDepart, const char *villeArrivee,
                                 unsigned int *nbTrajetsTrouves) const {
   if (villeDepart == NULL || villeArrivee == NULL || nbTrajetsTrouves == NULL) {
     cerr << "Paramètres invalides pour la recherche." << endl;

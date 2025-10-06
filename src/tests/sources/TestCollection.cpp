@@ -83,9 +83,91 @@ void testCollectionSuppressionAIndexInvalides()
     delete c; 
 }
 
+void TestRechercheValideDansCollectionDeTrajetsSimples()
+{
+    cout << "\n\n[TEST] Recherche valide dans une Collection." << endl;
+    Collection* c = new Collection(5);
+    TrajetSimple* ts1 = new TrajetSimple("Milhau", "Clermont d'Auvernha", Bateau);
+    TrajetSimple* ts2 = new TrajetSimple("Marselha", "Paris", Train);
+    TrajetSimple* ts3 = new TrajetSimple("Rodès", "Villafranca de rouergue", Voiture);
+    c->Ajouter(ts1);
+    c->Ajouter(ts2);
+    c->Ajouter(ts3);
+
+    const char * villeArrivee = "Paris";
+    const char * villeDepart = "Marselha";
+
+    cout << "\n\tCollection actuelle :" << endl;
+    c->Afficher(true);
+    cout << endl;
+    cout << "\tRecherche de trajets de " << villeDepart << " à " << villeArrivee << " :" << endl;
+
+    unsigned int nbTrajetsTrouves = 0;
+    Trajet** resultats = c->Rechercher(villeDepart, villeArrivee, &nbTrajetsTrouves);
+
+    if (resultats != NULL && nbTrajetsTrouves > 0) {
+        cout << "\tSuccès de la recherche. Nombre de trajets trouvés : " << nbTrajetsTrouves << endl;
+        for (unsigned int i = 0; i < nbTrajetsTrouves; i++) {
+            resultats[i]->Afficher();
+            cout << endl;
+        }
+    } else {
+        cerr << "\tÉchec de la recherche." << endl;
+    }
+
+    delete[] resultats; 
+    delete c; 
+}
+
+void testRecherchesInvalidesDansCollectionDeTrajetsSimples()
+{
+    cout << "\n\n[TEST] Recherches invalides dans une Collection." << endl;
+    Collection* c = new Collection(5);
+    TrajetSimple* ts1 = new TrajetSimple("Milhau", "Clermont d'Auvernha", Bateau);
+    TrajetSimple* ts2 = new TrajetSimple("Marselha", "Paris", Train);
+    TrajetSimple* ts3 = new TrajetSimple("Rodès", "Villafranca de rouergue", Voiture);
+    c->Ajouter(ts1);
+    c->Ajouter(ts2);
+    c->Ajouter(ts3);
+
+    const char * villeArrivee = "Paris";
+    const char * villeDepart = "Marselha";
+
+    cout << "\n\tCollection actuelle :" << endl;
+    c->Afficher(true);
+    cout << endl;
+
+    unsigned int nbTrajetsTrouves = 0;
+
+    cout << "\tRecherche avec villeDepart NULL :" << endl;
+    Trajet** resultats1 = c->Rechercher(NULL, villeArrivee, &nbTrajetsTrouves);
+    if (resultats1 == NULL) {
+        cout << "\tSuccès : Gestion correcte de la recherche avec villeDepart NULL." << endl;
+    } else {
+        cerr << "\tÉchec : La recherche avec villeDepart NULL n'a pas été gérée correctement." << endl;
+        delete[] resultats1; 
+    }
+
+    cout << "\tRecherche avec villeArrivee NULL :" << endl;
+    Trajet** resultats2 = c->Rechercher(villeDepart, NULL, &nbTrajetsTrouves);
+    if (resultats2 == NULL) {
+        cout << "\tSuccès : Gestion correcte de la recherche avec villeArrivee NULL." << endl;
+    } else {
+        cerr << "\tÉchec : La recherche avec villeArrivee NULL n'a pas été gérée correctement." << endl;
+        delete[] resultats2; 
+    }
+
+    cout << "\tRecherche avec nbTrajetsTrouves NULL :" << endl;
+    Trajet** resultats3 = c->Rechercher(villeDepart, villeArrivee, NULL);
+    if (resultats3 == NULL) {
+        cout << "\tSuccès : Gestion correcte de la recherche avec nbTrajetsTrouves NULL." << endl;
+    }
+}
+
 void lancementTestsCollection() {
     testCollectionInstanciation();
     testCollectionAjoutDeTrajetsSimples();
     testCollectionSuppressionTrajetsSimples();
     testCollectionSuppressionAIndexInvalides();
+    TestRechercheValideDansCollectionDeTrajetsSimples();
 }
