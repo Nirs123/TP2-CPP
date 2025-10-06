@@ -3,7 +3,8 @@
                               -------------------
     début                : 05/10/2025
     copyright            : (C) 2025 par Jean Marcillac et Nicolas Foussard
-    e-mail               : jean.marcillac@insa-lyon.fr, nicolas.foussard@insa-lyon.fr
+    e-mail               : jean.marcillac@insa-lyon.fr,
+nicolas.foussard@insa-lyon.fr
 *************************************************************************/
 
 //--------------------------------------------------- Interfaces utilisées
@@ -20,43 +21,64 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Collection::Ajouter(Trajet* trajet)
-{
-    // Implémentation à venir
-    return;
+void Collection::Ajouter(Trajet *trajet) {
+
+  if (index >= tailleMax) {
+    doublerTailleTrajets();
+  }
+
+  trajets[index++] = trajet;
+  return;
 }
 
-void Collection::Supprimer(int index)
-{
-    // Implémentation à venir
-    return;
+void Collection::Supprimer(int index) {
+  // Implémentation à venir
+  return;
 }
 
-Trajet** Collection::Rechercher(char* villeDepart, char* villeArrivee, int * nbTrajetsTrouves) const
-{
-    // Implémentation à venir
-    return NULL;
+Trajet **Collection::Rechercher(char *villeDepart, char *villeArrivee,
+                                int *nbTrajetsTrouves) const {
+  // Implémentation à venir
+  return NULL;
 }
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Collection::Collection(int tailleMax) : tailleMax(tailleMax), index(0)
-{
-    trajets = new Trajet*[tailleMax];
+Collection::Collection(int tailleMax) : tailleMax(tailleMax), index(0) {
+
+#ifdef MAP
+  cout << "[MAP] -> Constructeur de : Collection" << endl;
+#endif
+
+  trajets = new Trajet *[tailleMax];
 }
 
-Collection::~Collection()
-{
-    if (MAP_COLLECTION)
-    {
-        cout << "[MAP] -> Destructeur de : Collection" << endl;
-    }
+Collection::~Collection() {
+#ifdef MAP
+  cout << "[MAP] -> Destructeur de : Collection" << endl;
+#endif
 
-    for (int i = 0; i < index; i++)
-    {
-        delete trajets[i];
-    }
-    
-    delete[] trajets;
-    return;
+  for (int i = 0; i < index; i++) {
+    delete trajets[i];
+  }
+
+  delete[] trajets;
+  return;
+}
+
+//----------------------------------------------------- Méthodes protégées
+void Collection::doublerTailleTrajets() {
+
+  int nouvelleTaille = tailleMax * 2;
+  Trajet **nouveauxTrajets = new Trajet *[nouvelleTaille];
+
+  for (int i = 0; i < tailleMax; i++) {
+    nouveauxTrajets[i] = trajets[i];
+  }
+
+  delete[] trajets;
+  trajets = nouveauxTrajets;
+  tailleMax = nouvelleTaille;
+
+  return;
 }

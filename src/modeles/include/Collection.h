@@ -50,6 +50,8 @@ protected:
     Trajet** trajets;  // Tableau de pointeurs vers les trajets
     int tailleMax;     // Taille maximale de la collection
     int index;         // Index actuel
+
+    void doublerTailleTrajets();
 };
 
 #endif // COLLECTION_H
