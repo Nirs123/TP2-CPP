@@ -9,6 +9,7 @@
 //--------------------------------------------------- Interfaces utilisées
 #include "../include/TrajetSimple.h"
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -21,32 +22,42 @@ using namespace std;
 
 TrajetSimple::TrajetSimple(char* villeDepart, char* villeArrivee, MoyenTransport moyenTransport)
 {
-    // Implémentation à venir
-    return;
+    #ifdef MAP
+        cout << "[MAP] -> Constructeur de : TrajetSimple" << endl;
+    #endif
+
+    this->villeDepart = new char[strlen(villeDepart) + 1];
+    strcpy(this->villeDepart, villeDepart);
+
+    this->villeArrivee = new char[strlen(villeArrivee) + 1];
+    strcpy(this->villeArrivee, villeArrivee);
+
+    this->moyenTransport = moyenTransport;
 }
 
 TrajetSimple::~TrajetSimple()
 {
-    // Implémentation à venir
-    return;
+    #ifdef MAP
+        cout << "[MAP] -> Destructeur de : TrajetSimple" << endl;
+    #endif
+
+    delete[] villeDepart;
+    delete[] villeArrivee;
 }
 
 //----------------------------------------------------- Méthodes publiques
 
 char* TrajetSimple::GetVilleDepart() const
 {
-    // Implémentation à venir
-    return NULL;
+    return villeDepart;
 }
 
 char* TrajetSimple::GetVilleArrivee() const
 {
-    // Implémentation à venir
-    return NULL;
+    return villeArrivee;
 }
 
 void TrajetSimple::Afficher() const
 {
-    // Implémentation à venir
-    return;
+    cout << "de " << villeDepart << " à " << villeArrivee << " en " << moyenTransport << endl;
 }
