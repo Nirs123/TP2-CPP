@@ -2,6 +2,6 @@
 #define TEST_COLLECTION_H
 
 void lancementTestsCollection();
-void testInstanciationValide();
+void testCollectionInstanciation();
 
 #endif // TEST_COLLECTION_H

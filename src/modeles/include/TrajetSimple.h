@@ -25,7 +25,7 @@ class TrajetSimple : public Trajet
 public:
     //-------------------------------------------- Constructeurs - destructeur
 
-    TrajetSimple(char* villeDepart, char* villeArrivee, MoyenTransport moyenTransport);
+    TrajetSimple(const char* villeDepart,const char* villeArrivee, MoyenTransport moyenTransport);
     // Constructeur avec les villes de départ et d'arrivée et le moyen de transport
 
     ~TrajetSimple();

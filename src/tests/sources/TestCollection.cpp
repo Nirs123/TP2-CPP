@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void testInstanciationValide() {
+void testCollectionInstanciation() {
     cout << "[TEST] Instanciation de Collection avec taille 5." << endl;
 
     Collection* c = new Collection(5);
@@ -20,5 +20,5 @@ void testInstanciationValide() {
 }
 
 void lancementTestsCollection() {
-    testInstanciationValide();
+    testCollectionInstanciation();
 }

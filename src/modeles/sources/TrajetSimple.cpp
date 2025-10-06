@@ -20,7 +20,7 @@ using namespace std;
 
 //-------------------------------------------- Constructeurs - destructeur
 
-TrajetSimple::TrajetSimple(char* villeDepart, char* villeArrivee, MoyenTransport moyenTransport)
+TrajetSimple::TrajetSimple(const char* villeDepart, const char* villeArrivee, MoyenTransport moyenTransport)
 {
     #ifdef MAP
         cout << "[MAP] -> Constructeur de : TrajetSimple" << endl;
@@ -41,23 +41,23 @@ TrajetSimple::~TrajetSimple()
         cout << "[MAP] -> Destructeur de : TrajetSimple" << endl;
     #endif
 
-    delete[] villeDepart;
-    delete[] villeArrivee;
+    delete[] this->villeDepart;
+    delete[] this->villeArrivee;
 }
 
 //----------------------------------------------------- Méthodes publiques
 
 char* TrajetSimple::GetVilleDepart() const
 {
-    return villeDepart;
+    return this->villeDepart;
 }
 
 char* TrajetSimple::GetVilleArrivee() const
 {
-    return villeArrivee;
+    return this->villeArrivee;
 }
 
 void TrajetSimple::Afficher() const
 {
-    cout << "de " << villeDepart << " à " << villeArrivee << " en " << moyenTransport << endl;
+    cout << "de " << this->villeDepart << " à " << this->villeArrivee << " en " << TransportToString(this->moyenTransport) << endl;
 }

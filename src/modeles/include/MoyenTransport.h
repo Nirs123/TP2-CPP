@@ -22,4 +22,6 @@ enum MoyenTransport {
     Voiture
 };
 
+const char* TransportToString(MoyenTransport transport);
+
 #endif // MOYENTRANSPORT_H
