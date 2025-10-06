@@ -9,8 +9,8 @@
 #ifndef TRAJETFABRIQUE_H
 #define TRAJETFABRIQUE_H
 
-#include "../modeles/include/TrajetSimple.h"
-#include "../modeles/include/TrajetCompose.h"
+#include "../../modeles/include/TrajetSimple.h"
+#include "../../modeles/include/TrajetCompose.h"
 
 class TrajetFabrique {
 public:

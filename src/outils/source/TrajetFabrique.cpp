@@ -6,7 +6,7 @@
     e-mail               : [Votre email]
 *************************************************************************/
 
-#include "TrajetFabrique.h"
+#include "../include/TrajetFabrique.h"
 #include <cstddef>
 
 // Constructeur
