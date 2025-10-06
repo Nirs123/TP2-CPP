@@ -20,5 +20,5 @@ void testInstanciationValide() {
 }
 
 void lancementTestsCollection() {
-    test_instanciation_valide();
+    testInstanciationValide();
 }

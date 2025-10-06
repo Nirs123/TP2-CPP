@@ -9,10 +9,11 @@ int main() {
 
     // Tests pour Catalogue
     cout << "\n=== Tests pour Catalogue ===" << endl;
-    // lancementTests_Catalogue();
+    
     // Tests pour Collection
     cout << "\n=== Tests pour Collection ===" << endl;
-    lancementTests_Collection();
+    lancementTestsCollection();
+
     // Tests pour TrajetCompose
     cout << "\n=== Tests pour TrajetCompose ===" << endl;
 
