@@ -1,9 +1,10 @@
 /*************************************************************************
                         TrajetFabrique  -  description
                           -------------------
-    début                : [Date actuelle]
-    copyright            : (C) [Année actuelle] par [Votre nom]
-    e-mail               : [Votre email]
+    début                : 05/10/2025
+    copyright            : (C) 2025 par Jean Marcillac et Nicolas Foussard
+    e-mail               : jean.marcillac@insa-lyon.fr,
+nicolas.foussard@insa-lyon.fr
 *************************************************************************/
 
 #ifndef TRAJETFABRIQUE_H
