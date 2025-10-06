@@ -18,6 +18,20 @@ using namespace std;
 // et recherche de parcours.
 //------------------------------------------------------------------------
 
+//-------------------------------------------- Constructeurs - destructeur
+
+Catalogue::Catalogue(unsigned int tailleMax)
+{
+    // Implémentation à venir
+    return;
+}
+
+Catalogue::~Catalogue()
+{
+    // Implémentation à venir
+    return;
+}
+
 //----------------------------------------------------- Méthodes publiques
 
 void Catalogue::Ajouter(Trajet* trajet)
@@ -39,20 +53,6 @@ void Catalogue::RechercherParcours(char* villeDepart, char* villeArrivee) const
 }
 
 void Catalogue::Afficher() const
-{
-    // Implémentation à venir
-    return;
-}
-
-//-------------------------------------------- Constructeurs - destructeur
-
-Catalogue::Catalogue(unsigned int tailleMax)
-{
-    // Implémentation à venir
-    return;
-}
-
-Catalogue::~Catalogue()
 {
     // Implémentation à venir
     return;
