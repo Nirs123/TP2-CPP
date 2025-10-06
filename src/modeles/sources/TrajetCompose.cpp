@@ -21,32 +21,39 @@ using namespace std;
 
 TrajetCompose::TrajetCompose(Trajet** lesTrajets, unsigned int nbTrajets)
 {
-    // Implémentation à venir
-    return;
+    #ifdef MAP
+        cout << "[MAP] -> Constructeur de : TrajetCompose" << endl;
+    #endif
+
+    this->itineraire = new Collection(nbTrajets);
+    for (unsigned int i = 0; i < nbTrajets; i++) {
+        this->itineraire->Ajouter(lesTrajets[i]);
+    }
 }
 
 TrajetCompose::~TrajetCompose()
 {
-    // Implémentation à venir
-    return;
+    #ifdef MAP
+        cout << "[MAP] -> Destructeur de : TrajetCompose" << endl;
+    #endif
+
+    delete this->itineraire;
 }
 
 //----------------------------------------------------- Méthodes publiques
 
 char* TrajetCompose::GetVilleDepart() const
 {
-    // Implémentation à venir
-    return NULL;
+    return this->itineraire->Recuperer(0)->GetVilleDepart();
 }
 
 char* TrajetCompose::GetVilleArrivee() const
 {
-    // Implémentation à venir
-    return NULL;
+    unsigned int nbTrajets = this->itineraire->GetTailleCourante();
+    return this->itineraire->Recuperer(nbTrajets - 1)->GetVilleArrivee();
 }
 
 void TrajetCompose::Afficher() const
 {
-    // Implémentation à venir
-    return;
+    this->itineraire->Afficher(false);
 }

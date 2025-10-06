@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "./include/TestCollection.h"
+#include "./include/TestTrajetCompose.h"
 #include "./include/TestTrajetSimple.h"
 
 using namespace std;
@@ -17,6 +18,7 @@ int main() {
 
     // Tests pour TrajetCompose
     cout << "\n=== Tests pour TrajetCompose ===" << endl;
+    lancementTestsTrajetCompose();
 
     // Tests pour TrajetSimple
     cout << "\n=== Tests pour TrajetSimple ===" << endl;
