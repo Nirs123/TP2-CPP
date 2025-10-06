@@ -40,14 +40,23 @@ Trajet** Collection::Rechercher(char* villeDepart, char* villeArrivee, int * nbT
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Collection::Collection(int tailleMax)
+Collection::Collection(int tailleMax) : tailleMax(tailleMax), index(0)
 {
-    // Implémentation à venir
-    return;
+    trajets = new Trajet*[tailleMax];
 }
 
 Collection::~Collection()
 {
-    // Implémentation à venir
+    if (MAP_COLLECTION)
+    {
+        cout << "[MAP] -> Destructeur de : Collection" << endl;
+    }
+
+    for (int i = 0; i < index; i++)
+    {
+        delete trajets[i];
+    }
+    
+    delete[] trajets;
     return;
 }

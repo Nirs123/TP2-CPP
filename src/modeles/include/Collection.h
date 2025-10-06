@@ -13,6 +13,8 @@
 //--------------------------------------------------- Interfaces utilisées
 #include "Trajet.h"
 
+#define MAP_COLLECTION false
+
 //------------------------------------------------------------------------
 // Rôle de la classe Collection :
 // Gérer une collection de trajets avec des opérations d'ajout, suppression
@@ -45,7 +47,6 @@ public:
     //------------------------------------------------------------------ PRIVE
 protected:
     //----------------------------------------------------- Attributs protégés
-
     Trajet** trajets;  // Tableau de pointeurs vers les trajets
     int tailleMax;     // Taille maximale de la collection
     int index;         // Index actuel
