@@ -83,7 +83,7 @@ void testCollectionSuppressionAIndexInvalides()
     delete c; 
 }
 
-void TestRechercheValideDansCollectionDeTrajetsSimples()
+void testRechercheValideDansCollectionDeTrajetsSimples()
 {
     cout << "\n\n[TEST] Recherche valide dans une Collection." << endl;
     Collection* c = new Collection(5);
@@ -164,10 +164,78 @@ void testRecherchesInvalidesDansCollectionDeTrajetsSimples()
     }
 }
 
+void testRecupererDansCollectionValide()
+{
+    cout << "\n\n[TEST] Récupération valide dans une Collection." << endl;
+    Collection* c = new Collection(5);
+    TrajetSimple* ts1 = new TrajetSimple("Milhau", "Clermont d'Auvernha", Bateau);
+    TrajetSimple* ts2 = new TrajetSimple("Marselha", "Paris", Train);
+    TrajetSimple* ts3 = new TrajetSimple("Rodès", "Villafranca de rouergue", Voiture);
+    c->Ajouter(ts1);
+    c->Ajouter(ts2);
+    c->Ajouter(ts3);
+
+    cout << "\n\tCollection actuelle :" << endl;
+    c->Afficher(true);
+    cout << endl;
+
+    unsigned int indexValide = 1;
+    cout << "\tRécupération du trajet à l'index " << indexValide << " :" << endl;
+    Trajet* trajetRecupere = c->Recuperer(indexValide);
+    if (trajetRecupere != NULL) {
+        cout << "\tSuccès de la récupération. Détails du trajet récupéré :" << endl;
+        trajetRecupere->Afficher();
+        cout << endl;
+    } else {
+        cerr << "\tÉchec de la récupération." << endl;
+    }
+
+    delete c; 
+}
+
+void testRecupererDansCollectionAIndexInvalides()
+{
+    cout << "\n\n[TEST] Récupération dans une Collection à des index invalides." << endl;
+    Collection* c = new Collection(5);
+    TrajetSimple* ts1 = new TrajetSimple("Milhau", "Clermont d'Auvernha", Bateau);
+    TrajetSimple* ts2 = new TrajetSimple("Marselha", "Paris", Train);
+    TrajetSimple* ts3 = new TrajetSimple("Rodès", "Villafranca de rouergue", Voiture);
+    c->Ajouter(ts1);
+    c->Ajouter(ts2);
+    c->Ajouter(ts3);
+
+    cout << "\n\tCollection actuelle :" << endl;
+    c->Afficher(true);
+    cout << endl;
+
+    int indexNegatif = -1;
+    cout << "\tRécupération du trajet à l'index " << indexNegatif << " :" << endl;
+    Trajet* trajetRecupereNegatif = c->Recuperer(indexNegatif);
+    if (trajetRecupereNegatif == NULL) {
+        cout << "\tSuccès : Gestion correcte de la récupération à un index négatif." << endl;
+    } else {
+        cerr << "\tÉchec : La récupération à un index négatif n'a pas été gérée correctement." << endl;
+    }
+
+    unsigned int indexTropGrand = 5;
+    cout << "\tRécupération du trajet à l'index " << indexTropGrand << " :" << endl;
+    Trajet* trajetRecupereTropGrand = c->Recuperer(indexTropGrand);
+    if (trajetRecupereTropGrand == NULL) {
+        cout << "\tSuccès : Gestion correcte de la récupération à un index trop grand." << endl;
+    } else {
+        cerr << "\tÉchec : La récupération à un index trop grand n'a pas été gérée correctement." << endl;
+    }
+
+    delete c; 
+}
+
 void lancementTestsCollection() {
     testCollectionInstanciation();
     testCollectionAjoutDeTrajetsSimples();
     testCollectionSuppressionTrajetsSimples();
     testCollectionSuppressionAIndexInvalides();
-    TestRechercheValideDansCollectionDeTrajetsSimples();
+    testRechercheValideDansCollectionDeTrajetsSimples();
+    testRecherchesInvalidesDansCollectionDeTrajetsSimples();
+    testRecupererDansCollectionValide();
+    testRecupererDansCollectionAIndexInvalides();
 }
