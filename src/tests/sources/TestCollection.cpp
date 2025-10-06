@@ -4,7 +4,7 @@
 using namespace std;
 
 void testInstanciationValide() {
-    cout << " [TEST] Instanciation de Collection avec taille 5." << endl;
+    cout << "[TEST] Instanciation de Collection avec taille 5." << endl;
 
     Collection* c = new Collection(5);
 
@@ -16,7 +16,7 @@ void testInstanciationValide() {
 
     delete c;
 
-    cout << " [TEST] Collection détruite avec succès." << endl;
+    cout << "\tSuccès de la destruction de la Collection." << endl;
 }
 
 void lancementTestsCollection() {
