@@ -10,6 +10,7 @@ nicolas.foussard@insa-lyon.fr
 //--------------------------------------------------- Interfaces utilisées
 #include "../include/Collection.h"
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -21,8 +22,11 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Collection::Afficher() const {
+void Collection::Afficher(bool afficherIndex) const {
     for (int i = 0; i < tailleCourante; i++) {
+        if (afficherIndex) {
+            cout << "[" << i << "] ";
+        }
         trajets[i]->Afficher();
         if (i < tailleCourante - 1) {
             cout << " - ";
@@ -54,10 +58,41 @@ void Collection::Supprimer(int index) {
   return;
 }
 
+Trajet *Collection::Recuperer(int index) const {
+  if (index < 0 || index >= this->tailleCourante) {
+    cerr << "Index invalide pour la récupération." << endl;
+    return nullptr;
+  }
+  return trajets[index];
+}
+
+unsigned int Collection::GetTailleCourante() const {
+  return this->tailleCourante;
+}
+
 Trajet **Collection::Rechercher(char *villeDepart, char *villeArrivee,
                                 unsigned int *nbTrajetsTrouves) const {
-  // Implémentation à venir
-  return NULL;
+  if (villeDepart == NULL || villeArrivee == NULL || nbTrajetsTrouves == NULL) {
+    cerr << "Paramètres invalides pour la recherche." << endl;
+    return NULL;
+  }
+
+  Trajet **resultats = new Trajet *[tailleCourante];
+  unsigned int compteur = 0;
+
+  for (int i = 0; i < tailleCourante; i++) {
+    bool departCorrespond =
+        (strcmp(trajets[i]->GetVilleDepart(), villeDepart) == 0);
+    bool arriveeCorrespond =
+        (strcmp(trajets[i]->GetVilleArrivee(), villeArrivee) == 0);
+    
+    if (departCorrespond && arriveeCorrespond) {
+      resultats[compteur++] = trajets[i];
+    }
+  }
+
+  *nbTrajetsTrouves = compteur;
+  return resultats;
 }
 
 //-------------------------------------------- Constructeurs - destructeur

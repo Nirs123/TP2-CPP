@@ -27,7 +27,7 @@ class Collection
 public:
     //----------------------------------------------------- Méthodes publiques
 
-    void Afficher() const;
+    void Afficher(bool afficherIndex = false) const;
 
     void Ajouter(Trajet* trajet);
     // Ajoute un trajet à la collection
@@ -38,6 +38,12 @@ public:
     Trajet** Rechercher(char* villeDepart, char* villeArrivee, unsigned int * nbTrajetsTrouves) const;
     // Recherche un trajet entre deux villes
 
+    Trajet * Recuperer(int index) const;
+    // Récupère un trajet de la collection à l'index spécifié
+
+    unsigned int GetTailleCourante() const;
+    // Retourne la taille courante de la collection
+    
     //-------------------------------------------- Constructeurs - destructeur
 
     Collection(unsigned int tailleMax);
